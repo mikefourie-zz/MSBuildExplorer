@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="MSBuildExplorer.UserControls.BuildPad"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
+             mc:Ignorable="d" 
+             d:DesignHeight="2077.508" d:DesignWidth="1005.731">
+    <DockPanel>
+        <Grid Background="#FFE5E5E5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" x:Name="gridMain">
+                <DockPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="0" Grid.Row="0">
+                    <avalonEdit:TextEditor Name="textBoxXml" FontFamily="Consolas" FontSize="8pt" ShowLineNumbers="true" SyntaxHighlighting="XML" Margin="0,0,0,116"/>
+                </DockPanel>
+            </Grid>
+            <Label Content="Parameters" HorizontalAlignment="Left" Margin="34,0,0,88" Width="109" Height="26" VerticalAlignment="Bottom"/>
+            <TextBox x:Name="TextBoxParameters" Margin="13,0,0,11.333" TextWrapping="Wrap" FontSize="11" AcceptsReturn="True" Background="#FFE8E8EC" Height="77" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="432" />
+            <Label Content="Pre-execution" Margin="529,0,0,87.333" RenderTransformOrigin="0.499,1.25" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="109"/>
+            <TextBox Margin="508,0,0,10.333" x:Name="TextBoxPreExecute" TextWrapping="Wrap" FontSize="11" AcceptsReturn="True" AcceptsTab="False" Background="#FFE8E8EC" Height="77" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="472" />
+            <Image HorizontalAlignment="Left" Height="16" Margin="13,0,0,93" VerticalAlignment="Bottom" Width="16" Source="/MSBuildExplorer;component/Resources/Images/16/execute.png" Stretch="None"/>
+            <Image HorizontalAlignment="Left" Height="16" Margin="508,0,0,92.333" VerticalAlignment="Bottom" Width="16" Source="/MSBuildExplorer;component/Resources/Images/16/prebuild.png" Stretch="None"/>
+        </Grid>
+    </DockPanel>
+</UserControl>

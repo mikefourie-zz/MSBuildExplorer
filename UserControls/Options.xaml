@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="MSBuildExplorer.UserControls.Options"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="413" d:DesignWidth="508">
+    <Grid>
+        <Grid Margin="0,0,0,7" Background="#FFEFEFF2">
+            <CheckBox Content="Pause Console After Execution" Height="16" HorizontalAlignment="Left" Margin="12,12,0,0" x:Name="checkBoxPauseConsoleAfterExecution" VerticalAlignment="Top" />
+            <Button Content="Ok" Height="23" HorizontalAlignment="Left" Margin="424,373,0,0" x:Name="buttonOk" VerticalAlignment="Top" Width="75" Click="buttonOk_Click" />
+            <CheckBox Content="Minimize To System Tray" Height="16" HorizontalAlignment="Left" Margin="12,34,0,0" x:Name="checkBoxMinimizeToSystemTray" VerticalAlignment="Top" />
+            <Label Content="Default Build Parameters" HorizontalAlignment="Left" Margin="12,143,0,0" VerticalAlignment="Top" Width="191" />
+            <TextBox AcceptsReturn="True" Background="White" FontSize="11" Height="83" Margin="13,170,0,0" x:Name="TextBoxParameters" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="487" />
+            <Label Content="Default Pre-Build Commands" HorizontalAlignment="Left" Margin="11,258,0,0" RenderTransformOrigin="0.499,1.25" VerticalAlignment="Top" Width="216" />
+            <TextBox AcceptsReturn="True" AcceptsTab="False" Background="White" FontSize="11" Margin="12,289,0,0" x:Name="TextBoxPreExecute" TextWrapping="Wrap" HorizontalAlignment="Left" Width="488" Height="75" VerticalAlignment="Top" />
+            <CheckBox Content="Prompt Default Target Execution" Height="16" HorizontalAlignment="Left" Margin="12,76,0,0" x:Name="checkBoxPromptDefaultTargetExecution" VerticalAlignment="Top" />
+            <CheckBox Content="Minimize on Close" Height="16" HorizontalAlignment="Left" Margin="12,55,0,0" x:Name="checkBoxMinimizeToSystemTrayOnClose" VerticalAlignment="Top" />
+        </Grid>
+
+    </Grid>
+</UserControl>

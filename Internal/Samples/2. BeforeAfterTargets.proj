@@ -1,0 +1,11 @@
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Target Name="Default">
+    <Message Text="Hello Mike"/>
+  </Target>
+    <Target Name="BeforeMike" BeforeTargets="Default">
+        <Message Text="Hi Before Mike"/>
+    </Target>
+    <Target Name="AfterMike" AfterTargets="Default">
+        <Message Text="Hi After Mike"/>
+    </Target>
+</Project>

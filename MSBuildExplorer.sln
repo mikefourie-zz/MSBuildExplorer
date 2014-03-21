@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSBuildExplorer", "MSBuildExplorer.csproj", "{96C7A1B9-4D17-4F01-8955-B58A50BF7F1A}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://mikefourie.tfspreview.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = MSBuildExplorer.csproj
+		SccLocalPath1 = .
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96C7A1B9-4D17-4F01-8955-B58A50BF7F1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96C7A1B9-4D17-4F01-8955-B58A50BF7F1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96C7A1B9-4D17-4F01-8955-B58A50BF7F1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96C7A1B9-4D17-4F01-8955-B58A50BF7F1A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,11 @@
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Target Name="Default">
+    <Message Text="Hello Mike"/>
+  </Target>
+  <Target Name="T2">
+    <Message Text="Hello T2"/>
+  </Target>
+  <Target Name="T3">
+    <Message Text="Hello T3"/>
+  </Target>
+</Project>

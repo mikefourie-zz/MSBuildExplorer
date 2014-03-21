@@ -1,0 +1,531 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+    <PublishUrl>ftp://ftp.msbuildexplorer.com/httpdocs/v3/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Background</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://www.msbuildexplorer.com/v3/</InstallUrl>
+    <UpdateUrl>http://www.msbuildexplorer.com/v3/</UpdateUrl>
+    <SupportUrl>http://www.msbuildexplorer.com</SupportUrl>
+    <ProductName>MSBuild Explorer</ProductName>
+    <PublisherName>Mike Fourie</PublisherName>
+    <SuiteName>MSBuild Explorer</SuiteName>
+    <MinimumRequiredVersion>3.0.0.0</MinimumRequiredVersion>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>Install.htm</WebPage>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>3.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{96C7A1B9-4D17-4F01-8955-B58A50BF7F1A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MSBuildExplorer</RootNamespace>
+    <AssemblyName>MSBuildExplorer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>Properties\MSbuildExplorer.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\Images\MSBEX.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>2D438ED15205C1C0799F2A0F890F267316FC48AA</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>MSBuildExplorer_1_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Fluent, Version=2.1.0.0, Culture=neutral, PublicKeyToken=3e436e32a8c5546f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>AssemblyReferences\Fluent.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.AvalonEdit, Version=4.3.1.9429, Culture=neutral, PublicKeyToken=9cc39be672370310, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\References\ICSharpCode.AvalonEdit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build" />
+    <Reference Include="Microsoft.Build.Engine" />
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Microsoft.Build.Tasks.v4.0" />
+    <Reference Include="Microsoft.Build.Utilities.v4.0" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Internal\DataModel\MSBuildTargetDetails.cs" />
+    <Compile Include="ListExtension.cs" />
+    <Compile Include="Internal\DataModel\FavoriteFileGroup.cs" />
+    <Compile Include="Internal\DataModel\FavoriteFile.cs" />
+    <Compile Include="Internal\DataModel\FavoriteEntity.cs">
+      <DependentUpon>FavoriteEntity.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Internal\EqualityComparers\MSBuildTargetEqualityComparer.cs" />
+    <Compile Include="Internal\DataModel\MSBuildItems.cs" />
+    <Compile Include="Internal\DataModel\MSBuildProperties.cs" />
+    <Compile Include="Internal\DataModel\MSBuildUsing.cs" />
+    <Compile Include="Internal\DataModel\SimpleObject.cs" />
+    <Compile Include="Forms\FavWin.xaml.cs">
+      <DependentUpon>FavWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="Internal\EqualityComparers\MSBuildFileEqualityComparer.cs" />
+    <Compile Include="MSBuildHelper.cs" />
+    <Compile Include="Resources\MSBuildExplorerLogger.cs" />
+    <Compile Include="UserControls\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\BuildPad.xaml.cs">
+      <DependentUpon>BuildPad.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Details.xaml.cs">
+      <DependentUpon>Details.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Favorites.xaml.cs">
+      <DependentUpon>Favorites.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Main.xaml.cs">
+      <DependentUpon>Main.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Options.xaml.cs">
+      <DependentUpon>Options.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TreeExplorer.xaml.cs">
+      <DependentUpon>TreeExplorer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserPreferences.cs" />
+    <Compile Include="ValEventArgs.cs" />
+    <Compile Include="WpfSingleInstance.cs" />
+    <Page Include="Forms\FavWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Internal\DataModel\MSBuildTarget.cs" />
+    <Compile Include="Internal\DataModel\MSBuildImport.cs" />
+    <Compile Include="Internal\DataModel\MSBuildFile.cs" />
+    <Compile Include="Forms\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="UserControls\About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\BuildPad.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Details.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Favorites.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Options.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\TreeExplorer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Internal\DataModel\FavoriteEntity.xsd" />
+    <None Include="MSBuildExplorer_1_TemporaryKey.pfx" />
+    <None Include="Properties\MSBuild.ExtensionPack.VersionNumber.targets">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Internal\Samples\1. HelloMike.proj" />
+    <None Include="Internal\Samples\2. BeforeAfterTargets.proj" />
+    <None Include="Internal\Samples\3. VariousTargets.proj" />
+    <None Include="Internal\Samples\4. InitalAndDefaultTargets.proj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\MSBEX.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\8\task.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\8\import.png" />
+    <Resource Include="Resources\Images\8\notfound.png" />
+    <Resource Include="Resources\Images\8\using.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\8\file.png" />
+    <Resource Include="Resources\Images\8\target.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16\file.png" />
+    <Resource Include="Resources\Images\16\import.png" />
+    <Resource Include="Resources\Images\16\notfound.png" />
+    <Resource Include="Resources\Images\16\target.png" />
+    <Resource Include="Resources\Images\16\task.png" />
+    <Resource Include="Resources\Images\16\using.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Logo\MSBEX - 16x16 - 32.png" />
+    <Resource Include="Resources\Images\Logo\MSBEX - 256x256 - 32.png" />
+    <Resource Include="Resources\Images\Logo\MSBEX - 32x32 - 32.png" />
+    <Resource Include="Resources\Images\Logo\MSBEX - 48x48 - 32.png" />
+    <Resource Include="Resources\Images\Logo\MSBEX - 96x96 - 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Logo\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16\build.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16\ArrowHead-Down.png" />
+    <Resource Include="Resources\Images\16\ArrowHead-Up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16\play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16\console.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Internal\AssemblyReferences\Fluent.dll" />
+    <Resource Include="Resources\Images\32\build.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\build.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\32\open.png" />
+    <Resource Include="Resources\Images\32\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\32\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\32\blog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Logo\MSBuild Logo %2832%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\32\homepage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\32\options.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\32\about.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16\open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\32\reload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16\execute.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16\load.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16\prebuild.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\32\Spade.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\32\Tree.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\References\ICSharpCode.AvalonEdit.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="de\System.Windows.Interactivity.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="en\System.Windows.Interactivity.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="es\System.Windows.Interactivity.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="Fluent">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="fr\System.Windows.Interactivity.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ICSharpCode.AvalonEdit">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="it\System.Windows.Interactivity.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ja\System.Windows.Interactivity.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ko\System.Windows.Interactivity.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\References\ICSharpCode.AvalonEdit.dll">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="System.Windows.Interactivity">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="zh-Hans\System.Windows.Interactivity.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="zh-Hant\System.Windows.Interactivity.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- <Import Project="Properties\MSBuild.ExtensionPack.VersionNumber.targets" />-->
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Target Name="BeforePublish">
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(IntermediateOutputPath)" />
+  </Target>
+</Project>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Targets" type="xs:string"/>
+    <xs:element name="TargetSet">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Targets"/>
+                <xs:element ref="Parameters"/>
+                <xs:element ref="Strapper"/>
+            </xs:sequence>
+            <xs:attribute name="Name" use="required" type="xs:string"/>
+            <xs:attribute name="file" use="required" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Strapper" type="xs:string"/>
+    <xs:element name="Parameters" type="xs:string"/>
+    <xs:element name="FavoriteEntity">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="TargetSet" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="file" use="required" type="xs:string"/>
+            <xs:attribute name="friendlyName" use="required" type="xs:string"/>
+            <xs:attribute name="groupName" use="required" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

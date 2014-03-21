@@ -1,0 +1,8 @@
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<PropertyGroup>
+<d>1</d>
+</PropertyGroup>
+  <Target Name="Default">
+    <Message Text="Hello Mike 1"/>
+  </Target>
+</Project>
