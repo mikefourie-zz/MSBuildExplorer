@@ -21,7 +21,7 @@
     <MinimumRequiredVersion>3.0.0.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>Install.htm</WebPage>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>3.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -77,10 +77,11 @@
     <ApplicationIcon>Resources\Images\MSBEX.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>2D438ED15205C1C0799F2A0F890F267316FC48AA</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>D956033AC670B4CF07293AF488A9DFBE8A76FC0A</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>MSBuildExplorer_1_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -235,7 +236,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Internal\DataModel\FavoriteEntity.xsd" />
-    <None Include="MSBuildExplorer_1_TemporaryKey.pfx" />
     <None Include="Properties\MSBuild.ExtensionPack.VersionNumber.targets">
       <SubType>Designer</SubType>
     </None>

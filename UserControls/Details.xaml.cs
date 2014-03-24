@@ -22,7 +22,7 @@ namespace MSBuildExplorer.UserControls
 
     public partial class Details
     {
-        public readonly ObservableCollection<MSBuildTarget> TargetsToBuild = new ObservableCollection<MSBuildTarget>();
+        public ObservableCollection<MSBuildTarget> TargetsToBuild = new ObservableCollection<MSBuildTarget>();
         private readonly FoldingManager foldingManager;
         private readonly AbstractFoldingStrategy foldingStrategy;
         private readonly FlowDocument flowDoc = new FlowDocument();
@@ -355,16 +355,35 @@ namespace MSBuildExplorer.UserControls
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             MSBuildTarget f = this.treeviewTargets.SelectedItem as MSBuildTarget;
-            if (f != null)
+            if (f == null)
             {
-                foreach (MSBuildTarget mf in this.TargetsToBuild)
-                {
-                    if (f == mf)
-                    {
-                        this.TargetsToBuild.Remove(mf);
-                        break;
-                    }
-                }
+                return;
+            }
+
+            foreach (MSBuildTarget mf in this.TargetsToBuild.Where(mf => f == mf))
+            {
+                this.TargetsToBuild.Remove(mf);
+                break;
+            }
+        }
+
+        private void menuRemoveOthers_Click(object sender, RoutedEventArgs e)
+        {
+            MSBuildTarget f = this.treeviewTargets.SelectedItem as MSBuildTarget;
+            if (f == null)
+            {
+                return;
+            }
+
+            ObservableCollection<MSBuildTarget> TargetsToBuildTemp = new ObservableCollection<MSBuildTarget>();
+            foreach (MSBuildTarget mf in this.TargetsToBuild.Where(mf => f != mf))
+            {
+                TargetsToBuildTemp.Add(mf);
+            }
+
+            foreach (MSBuildTarget mf in TargetsToBuildTemp)
+            {
+                this.TargetsToBuild.Remove(mf);
             }
         }
 

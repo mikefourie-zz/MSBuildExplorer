@@ -71,6 +71,8 @@
                                         <Image Source="/MSBuildExplorer;component/Resources/Images/16/delete.png" Width="16" Height="16" />
                                     </MenuItem.Icon>
                                 </MenuItem>
+                                <MenuItem Header="Remove Others" x:Name="menuRemoveOthers" Click="menuRemoveOthers_Click"/>
+                                <Separator/>
                                 <MenuItem Header="Remove All" x:Name="menuRemoveAll" Click="menuRemoveAll_Click"/>
                             </ContextMenu>
                         </TreeView.ContextMenu>
