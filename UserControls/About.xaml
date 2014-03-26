@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="332" d:DesignWidth="647">
+             d:DesignHeight="520.934" d:DesignWidth="647">
     <Grid Background="#FFF6F6F6">
         <Grid Margin="15,63,0,46">
             <Image HorizontalAlignment="Left" Height="201" VerticalAlignment="Top" Width="195" Source="/MSBuildExplorer3;component/Resources/Images/Logo/logo.png" Stretch="None" Margin="10,0,0,0"/>
@@ -12,7 +12,7 @@
             <Label Content="Version" HorizontalAlignment="Left" x:Name="labelVersion_Copy" Margin="220,10,0,0" VerticalAlignment="Top"/>
             <Label Content="2014 - Mike Fourie" HorizontalAlignment="Left" x:Name="labelVersion_Copy1" Margin="356,41,0,0" VerticalAlignment="Top"/>
             <Label Content="Author and Copyright" HorizontalAlignment="Left" x:Name="labelVersion_Copy2" Margin="220,41,0,0" VerticalAlignment="Top"/>
-            <TextBlock HorizontalAlignment="Left" Margin="220,147,0,0" TextWrapping="Wrap" Text="Warning: This computer program is protected by copyright law and international treaties. Unauthorized reproduction or distribution of this program, or any portion of it, may result in severe civil and criminal penalties, and will be prosecuted under the maximum extent possible under law." VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="14,206,0,0" TextWrapping="Wrap" Text="The MIT License (MIT)  Copyright (c) 2014 All Contributors. Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:  The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.  THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE." VerticalAlignment="Top" Width="608"/>
             <Label Content="This software is provided as freeware." x:Name="labelVersion_Copy5" Margin="220,81,0,0" VerticalAlignment="Top" FontStyle="Italic" HorizontalAlignment="Left" Width="202"/>
 
         </Grid>
