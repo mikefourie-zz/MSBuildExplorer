@@ -20,6 +20,9 @@ namespace MSBuildExplorer.UserControls
     using MSBuildExplorer.DataModel;
     using MSBuildExplorer.Properties;
 
+    /// <summary>
+    /// Details
+    /// </summary>
     public partial class Details
     {
         public readonly ObservableCollection<MSBuildTarget> TargetsToBuild = new ObservableCollection<MSBuildTarget>();

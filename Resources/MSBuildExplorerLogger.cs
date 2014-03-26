@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="MSBuildExplorerLogger.cs" company="Mike Fourie">(c) Mike Fourie, 2012. All other rights reserved.</copyright>
+// <copyright file="MSBuildExplorerLogger.cs">(c) Mike Fourie. All other rights reserved.</copyright>
 //-----------------------------------------------------------------------
 namespace MSBuildExplorer
 {

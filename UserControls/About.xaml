@@ -7,7 +7,7 @@
              d:DesignHeight="332" d:DesignWidth="647">
     <Grid Background="#FFF6F6F6">
         <Grid Margin="15,63,0,46">
-            <Image HorizontalAlignment="Left" Height="201" VerticalAlignment="Top" Width="195" Source="/MSBuildExplorer;component/Resources/Images/Logo/logo.png" Stretch="None" Margin="10,0,0,0"/>
+            <Image HorizontalAlignment="Left" Height="201" VerticalAlignment="Top" Width="195" Source="/MSBuildExplorer3;component/Resources/Images/Logo/logo.png" Stretch="None" Margin="10,0,0,0"/>
             <Label Content="Label" HorizontalAlignment="Left" x:Name="labelVersion" Margin="356,10,0,0" VerticalAlignment="Top"/>
             <Label Content="Version" HorizontalAlignment="Left" x:Name="labelVersion_Copy" Margin="220,10,0,0" VerticalAlignment="Top"/>
             <Label Content="2014 - Mike Fourie" HorizontalAlignment="Left" x:Name="labelVersion_Copy1" Margin="356,41,0,0" VerticalAlignment="Top"/>

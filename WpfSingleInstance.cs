@@ -1,6 +1,6 @@
-﻿//-----------------------------------------------------------------------
-// <copyright file="WpfSingleInstance.cs" company="Mike Fourie">(c) Mike Fourie, 2012. All other rights reserved.</copyright>
-//-----------------------------------------------------------------------
+﻿//---------------------------------------------------------------------------------------------------------------------------
+// <copyright file="WpfSingleInstance.cs">(c) Mike Fourie. All other rights reserved.</copyright>
+//---------------------------------------------------------------------------------------------------------------------------
 namespace MSBuildExplorer
 {
     using System;
@@ -73,8 +73,6 @@ namespace MSBuildExplorer
                     eventWaitHandle.Set();
                 }
 
-                // Let's terminate this posterior startup.
-                // For that exit no interceptions.
                 Environment.Exit(0);
             }
             catch

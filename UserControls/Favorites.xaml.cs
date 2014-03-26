@@ -12,6 +12,9 @@ namespace MSBuildExplorer.UserControls
     using MSBuildExplorer.DataModel;
     using MSBuildExplorer.Properties;
 
+    /// <summary>
+    /// Favorites
+    /// </summary>
     public partial class Favorites
     {
         public static readonly RoutedEvent FavoriteClick = EventManager.RegisterRoutedEvent("FavoriteClick", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(Favorites));

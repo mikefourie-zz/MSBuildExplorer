@@ -13,6 +13,9 @@ namespace MSBuildExplorer.UserControls
     using System.Windows.Media;
     using MSBuildExplorer.DataModel;
 
+    /// <summary>
+    /// TreeExplorer
+    /// </summary>
     public partial class TreeExplorer
     {
         public static readonly RoutedEvent TargetClick = EventManager.RegisterRoutedEvent("TargetClick", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(TreeExplorer));

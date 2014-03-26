@@ -20,8 +20,8 @@
             <TextBox x:Name="TextBoxParameters" Margin="13,0,0,11.333" TextWrapping="Wrap" FontSize="11" AcceptsReturn="True" Background="#FFE8E8EC" Height="77" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="432" />
             <Label Content="Pre-execution" Margin="529,0,0,87.333" RenderTransformOrigin="0.499,1.25" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="109"/>
             <TextBox Margin="508,0,0,10.333" x:Name="TextBoxPreExecute" TextWrapping="Wrap" FontSize="11" AcceptsReturn="True" AcceptsTab="False" Background="#FFE8E8EC" Height="77" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="472" />
-            <Image HorizontalAlignment="Left" Height="16" Margin="13,0,0,93" VerticalAlignment="Bottom" Width="16" Source="/MSBuildExplorer;component/Resources/Images/16/execute.png" Stretch="None"/>
-            <Image HorizontalAlignment="Left" Height="16" Margin="508,0,0,92.333" VerticalAlignment="Bottom" Width="16" Source="/MSBuildExplorer;component/Resources/Images/16/prebuild.png" Stretch="None"/>
+            <Image HorizontalAlignment="Left" Height="16" Margin="13,0,0,93" VerticalAlignment="Bottom" Width="16" Source="/MSBuildExplorer3;component/Resources/Images/16/execute.png" Stretch="None"/>
+            <Image HorizontalAlignment="Left" Height="16" Margin="508,0,0,92.333" VerticalAlignment="Bottom" Width="16" Source="/MSBuildExplorer3;component/Resources/Images/16/prebuild.png" Stretch="None"/>
         </Grid>
     </DockPanel>
 </UserControl>

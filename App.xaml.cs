@@ -5,6 +5,9 @@ namespace MSBuildExplorer
 {
     using System.Windows;
 
+    /// <summary>
+    /// App
+    /// </summary>
     public partial class App
     {
         protected override void OnStartup(StartupEventArgs e)

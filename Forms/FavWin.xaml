@@ -1,7 +1,7 @@
 ﻿<Window x:Class="MSBuildExplorer.Forms.FavWin"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Favorite" Height="431" Width="422.866" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded" Icon="/MSBuildExplorer;component/Resources/Images/MSBEX.ico">
+        Title="Favorite" Height="431" Width="422.866" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded" Icon="/MSBuildExplorer3;component/Resources/Images/MSBEX.ico">
     <Grid Background="#FFEFEFF2">
         <TextBox Height="23" HorizontalAlignment="Left" Margin="12,38,0,0" Name="txtFavoriteName" VerticalAlignment="Top" Width="389" />
         <Label Content="Favorite Name" Height="28" HorizontalAlignment="Left" Margin="12,12,0,0" Name="label1" VerticalAlignment="Top" />

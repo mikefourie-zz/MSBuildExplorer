@@ -68,7 +68,7 @@
                 <ContextMenu>
                     <MenuItem Header="Close" Click="MenuItem_Click">
                         <MenuItem.Icon>
-                            <Image Source="/MSBuildExplorer;component/Resources/Images/16/delete.png" Width="16" Height="16" />
+                            <Image Source="/MSBuildExplorer3;component/Resources/Images/16/delete.png" Width="16" Height="16" />
                         </MenuItem.Icon>
                     </MenuItem>
                     <MenuItem Header="CloseAll" Click="CloseAll_Click"/>
