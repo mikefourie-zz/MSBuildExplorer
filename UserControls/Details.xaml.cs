@@ -378,13 +378,13 @@ namespace MSBuildExplorer.UserControls
                 return;
             }
 
-            ObservableCollection<MSBuildTarget> TargetsToBuildTemp = new ObservableCollection<MSBuildTarget>();
+            ObservableCollection<MSBuildTarget> targetsToBuildTemp = new ObservableCollection<MSBuildTarget>();
             foreach (MSBuildTarget mf in this.TargetsToBuild.Where(mf => f != mf))
             {
-                TargetsToBuildTemp.Add(mf);
+                targetsToBuildTemp.Add(mf);
             }
 
-            foreach (MSBuildTarget mf in TargetsToBuildTemp)
+            foreach (MSBuildTarget mf in targetsToBuildTemp)
             {
                 this.TargetsToBuild.Remove(mf);
             }

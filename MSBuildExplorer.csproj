@@ -15,13 +15,13 @@
     <InstallUrl>http://www.msbuildexplorer.com/v3/</InstallUrl>
     <UpdateUrl>http://www.msbuildexplorer.com/v3/</UpdateUrl>
     <SupportUrl>http://www.msbuildexplorer.com</SupportUrl>
-    <ProductName>MSBuild Explorer</ProductName>
+    <ProductName>MSBuild Explorer 3</ProductName>
     <PublisherName>Mike Fourie</PublisherName>
-    <SuiteName>MSBuild Explorer</SuiteName>
-    <MinimumRequiredVersion>3.0.0.0</MinimumRequiredVersion>
+    <SuiteName>MSBuild Explorer 3</SuiteName>
+    <MinimumRequiredVersion>3.0.0.4</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>Install.htm</WebPage>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>3.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
