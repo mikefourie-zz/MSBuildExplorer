@@ -5,7 +5,7 @@
          xmlns:basic="clr-namespace:MSBuildExplorer.UserControls"
                      Title="MSBuild Explorer 3" Height="650" Width="900"
                      WindowStartupLocation="CenterScreen"  Icon="/MSBuildExplorer3;component/Resources/Images/MSBEX.ico"
-              MinHeight="550" MinWidth="500" Closing="Window_Closing" StateChanged="Window_StateChanged">
+              MinHeight="650" MinWidth="750" Closing="Window_Closing" StateChanged="Window_StateChanged">
     
   
     <Fluent:RibbonWindow.Resources>
