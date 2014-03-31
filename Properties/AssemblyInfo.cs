@@ -11,7 +11,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Mike Fourie")]
 [assembly: AssemblyProduct("MSBuild Explorer")]
-[assembly: AssemblyCopyright("Copyright ©  2014")]
+[assembly: AssemblyCopyright("Copyright © 2014")]
 [assembly: AssemblyTrademark("Mike Fourie")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]

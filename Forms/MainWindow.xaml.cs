@@ -5,30 +5,23 @@ namespace MSBuildExplorer
 {
     using System;
     using System.Windows;
-    using MSBuildExplorer.Properties;
-
+    
     /// <summary>
     /// Interaction logic for MainWindow
     /// </summary>
     public partial class MainWindow
     {
-        private readonly System.Windows.Forms.NotifyIcon systemTrayIcon;
         private buildMode mode = buildMode.Explorer;
 
         public MainWindow()
         {
             this.InitializeComponent();
             var userPrefs = new UserPreferences();
-
             this.Height = userPrefs.WindowHeight;
             this.Width = userPrefs.WindowWidth;
             this.Top = userPrefs.WindowTop;
             this.Left = userPrefs.WindowLeft;
-
             this.WindowState = userPrefs.WindowState;
-           
-            this.systemTrayIcon = new System.Windows.Forms.NotifyIcon { Icon = Properties.Resources.MSBEX };
-            this.systemTrayIcon.MouseDoubleClick += this.MyNotifyIcon_MouseDoubleClick;
         }
 
         private enum buildMode
@@ -42,31 +35,6 @@ namespace MSBuildExplorer
             /// Explorer
             /// </summary>
             Explorer
-        }
-
-        private void MyNotifyIcon_MouseDoubleClick(object sender, System.Windows.Forms.MouseEventArgs e)
-        {
-            this.WindowState = WindowState.Normal;
-        }
-
-        private void Window_StateChanged(object sender, EventArgs e)
-        {
-            if (this.WindowState == WindowState.Minimized)
-            {
-                if (Settings.Default.MinimizeToSystemTray)
-                {
-                    this.ShowInTaskbar = false;
-                    this.systemTrayIcon.BalloonTipTitle = "MSBuild Explorer";
-                    this.systemTrayIcon.BalloonTipText = "Minimized to tray...";
-                    this.systemTrayIcon.ShowBalloonTip(400);
-                    this.systemTrayIcon.Visible = true;
-                }
-            }
-            else if (this.WindowState == WindowState.Normal)
-            {
-                this.systemTrayIcon.Visible = false;
-                this.ShowInTaskbar = true;
-            }
         }
 
         private void menuShowExplorer(object sender, RoutedEventArgs e)
@@ -170,12 +138,6 @@ namespace MSBuildExplorer
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (Settings.Default.MinimizeOnClose)
-            {
-                e.Cancel = true;
-                this.WindowState = WindowState.Minimized;
-            }
-
             var userPrefs = new UserPreferences
                             {
                                 WindowHeight = this.ActualHeight,

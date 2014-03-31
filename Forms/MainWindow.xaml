@@ -5,12 +5,7 @@
          xmlns:basic="clr-namespace:MSBuildExplorer.UserControls"
                      Title="MSBuild Explorer 3" Height="650" Width="900"
                      WindowStartupLocation="CenterScreen"  Icon="/MSBuildExplorer3;component/Resources/Images/MSBEX.ico"
-              MinHeight="650" MinWidth="750" Closing="Window_Closing" StateChanged="Window_StateChanged">
-    
-  
-    <Fluent:RibbonWindow.Resources>
-        <!--<Style BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" TargetType="Button"/>-->
-    </Fluent:RibbonWindow.Resources>
+              MinHeight="650" MinWidth="750" Closing="Window_Closing">
     <DockPanel LastChildFill="True">
         <Fluent:Ribbon x:Name="fluentRibbon" DockPanel.Dock="Top" SelectedTabIndex="1">
             <Fluent:Ribbon.QuickAccessItems>

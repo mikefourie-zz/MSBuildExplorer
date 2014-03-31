@@ -18,10 +18,10 @@
     <ProductName>MSBuild Explorer 3</ProductName>
     <PublisherName>Mike Fourie</PublisherName>
     <SuiteName>MSBuild Explorer 3</SuiteName>
-    <MinimumRequiredVersion>3.0.0.4</MinimumRequiredVersion>
+    <MinimumRequiredVersion>3.0.0.7</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>Install.htm</WebPage>
-    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationRevision>8</ApplicationRevision>
     <ApplicationVersion>3.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -29,8 +29,10 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>MSBuildExplorer.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>true</DelaySign>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -236,6 +238,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Internal\DataModel\FavoriteEntity.xsd" />
+    <None Include="MSBuildExplorer.snk" />
     <None Include="Properties\MSBuild.ExtensionPack.VersionNumber.targets">
       <SubType>Designer</SubType>
     </None>
