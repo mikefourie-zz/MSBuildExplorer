@@ -18,10 +18,10 @@
     <ProductName>MSBuild Explorer 3</ProductName>
     <PublisherName>Mike Fourie</PublisherName>
     <SuiteName>MSBuild Explorer 3</SuiteName>
-    <MinimumRequiredVersion>3.0.0.7</MinimumRequiredVersion>
+    <MinimumRequiredVersion>3.0.0.9</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>Install.htm</WebPage>
-    <ApplicationRevision>8</ApplicationRevision>
+    <ApplicationRevision>10</ApplicationRevision>
     <ApplicationVersion>3.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

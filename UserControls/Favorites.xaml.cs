@@ -128,6 +128,25 @@ namespace MSBuildExplorer.UserControls
                 favs.Remove(ff.FullPath);
                 Settings.Default.Save();
                 this.LoadFavorites();
+                return;
+            }
+
+            FavoriteFileGroup ffg = this.treeViewFavorites.SelectedItem as FavoriteFileGroup;
+            if (ffg != null)
+            {
+                if (MessageBox.Show("Are you sure you would like to close this whole Favorite group?", "Confirm", MessageBoxButton.YesNo, MessageBoxImage.Question) != MessageBoxResult.Yes)
+                {
+                    return;
+                }
+
+                StringCollection favs = Settings.Default.Favorites;
+                foreach (FavoriteFile f in ffg.Files)
+                {
+                    favs.Remove(f.FullPath);
+                }
+
+                Settings.Default.Save();
+                this.LoadFavorites();
             }
         }
 
