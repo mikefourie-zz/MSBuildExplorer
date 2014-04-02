@@ -90,7 +90,7 @@ namespace MSBuildExplorer.UserControls
                 bool inserted = false;
                 foreach (FavoriteFileGroup group in this.favoriteFileFroups)
                 {
-                    if (group.Name == ffile.GroupName)
+                    if (string.Compare(group.Name, ffile.GroupName, StringComparison.OrdinalIgnoreCase) == 0)
                     {
                         group.Files.Add(ffile);
                         inserted = true;
