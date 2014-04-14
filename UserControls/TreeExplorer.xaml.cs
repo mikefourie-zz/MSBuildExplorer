@@ -83,30 +83,6 @@ namespace MSBuildExplorer.UserControls
             RaiseEvent(new RoutedEventArgs(TreeExplorer.FinishedExplore, this));
         }
 
-        ////public void RefreshFile(FileInfo file, bool populate)
-        ////{
-        ////    RaiseEvent(new RoutedEventArgs(TreeExplorer.StartExplore, this));
-        ////    try
-        ////    {
-        ////        //this.RootFile = MSBuildHelper.GetFile(file);
-        ////    }
-        ////    catch (Exception ex)
-        ////    {
-        ////        this.TreeExeption = ex;
-        ////        RaiseEvent(new RoutedEventArgs(TreeExplorer.FailedExplore, this));
-        ////        return;
-        ////    }
-
-        ////    this.files.BubbleSort();
-        ////    this.tvMain.ItemsSource = this.files;
-        ////    if (populate)
-        ////    {
-        ////        RaiseEvent(new RoutedEventArgs(TreeExplorer.PopulateEverything, this));
-        ////    }
-
-        ////    RaiseEvent(new RoutedEventArgs(TreeExplorer.FinishedExplore, this));
-        ////}
-
         internal void CloseFile(bool closeAll)
         {
             if (closeAll)

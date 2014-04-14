@@ -18,10 +18,10 @@
     <ProductName>MSBuild Explorer 3</ProductName>
     <PublisherName>Mike Fourie</PublisherName>
     <SuiteName>MSBuild Explorer 3</SuiteName>
-    <MinimumRequiredVersion>3.0.0.9</MinimumRequiredVersion>
+    <MinimumRequiredVersion>3.0.0.10</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>Install.htm</WebPage>
-    <ApplicationRevision>10</ApplicationRevision>
+    <ApplicationRevision>11</ApplicationRevision>
     <ApplicationVersion>3.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -386,6 +386,10 @@
     <Resource Include="Resources\Images\32\Tree.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\Images\16\blog.png" />
+    <Resource Include="Resources\Images\16\about.png" />
+    <Resource Include="Resources\Images\16\homepage.png" />
+    <Resource Include="Resources\Images\16\options.png" />
     <Content Include="Resources\References\ICSharpCode.AvalonEdit.dll" />
   </ItemGroup>
   <ItemGroup>

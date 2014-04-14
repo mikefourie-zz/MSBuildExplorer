@@ -13,7 +13,7 @@
             </Grid.RowDefinitions>
             <Grid Grid.Row="0" x:Name="gridMain">
                 <DockPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="0" Grid.Row="0">
-                    <avalonEdit:TextEditor Name="textBoxXml" FontFamily="Consolas" FontSize="8pt" ShowLineNumbers="true" SyntaxHighlighting="XML" Margin="0,0,0,116"/>
+          <avalonEdit:TextEditor Name="textBoxXml" FontFamily="Consolas" FontSize="8pt" ShowLineNumbers="true" SyntaxHighlighting="XML" Margin="0,0,0,116" AllowDrop="True" Drop="textBoxXml_Drop" DragEnter="textBoxXml_DragEnter" />
                 </DockPanel>
             </Grid>
             <Label Content="Parameters" HorizontalAlignment="Left" Margin="34,0,0,88" Width="109" Height="26" VerticalAlignment="Bottom"/>

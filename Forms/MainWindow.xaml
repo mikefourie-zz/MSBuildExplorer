@@ -11,40 +11,24 @@
             <Fluent:Ribbon.QuickAccessItems>
                 <Fluent:QuickAccessMenuItem Target="{Binding ElementName=buttonConsoleBuild}" IsChecked="true" Visibility="Visible"/>
             </Fluent:Ribbon.QuickAccessItems>
-            
-            <!-- Backstage -->
-            <Fluent:Ribbon.Menu>
-                <Fluent:Backstage Background="#189900">
-                    <Fluent:BackstageTabControl>
-                        <Fluent:Button Name="buttonOpen" Header="Open" Icon="/MSBuildExplorer3;component/Resources/Images/16/open.png" Click="menuOpen"/>
-                        <Fluent:Button Name="buttonSave" Header="Save" Icon="/MSBuildExplorer3;component/Resources/Images/16/save.png" Click="menuSaveFavorite"/>
-                        <Fluent:SeparatorTabItem />
-                        <Fluent:Button Name="buttonExit" Header="Exit" Icon="/MSBuildExplorer3;component/Resources/Images/16/exit.png" Click="menuExit"/>
-                    </Fluent:BackstageTabControl>
-                </Fluent:Backstage>
-            </Fluent:Ribbon.Menu>
 
             <!--Tabs-->
             <Fluent:RibbonTabItem Header="HOME">
-                <Fluent:RibbonGroupBox>
-                    <Fluent:Button Name="buttonExplorer" Header="Explorer" Icon="/MSBuildExplorer3;component/Resources/Images/32/tree.png" LargeIcon="/MSBuildExplorer3;component/Resources/Images/32/tree.png" Click="menuShowExplorer"/>
-                    <Fluent:Button Name="buttonBuildPad" Header="BuildPad" Icon="/MSBuildExplorer3;component/Resources/Images/32/spade.png" LargeIcon="/MSBuildExplorer3;component/Resources/Images/32/spade.png" Click="menuShowBuildPad"/>
-                </Fluent:RibbonGroupBox>
-                <Fluent:RibbonGroupBox>
-                    <Fluent:Button Name="buttonOptions" Header="Options" LargeIcon="/MSBuildExplorer3;component/Resources/Images/32/options.png" Click="menuOptions"/>
-                </Fluent:RibbonGroupBox>
-                <Fluent:RibbonGroupBox>
-                    <Fluent:Button Name="buttonConsoleBuild" Header="Build" Icon="/MSBuildExplorer3;component/Resources/Images/32/build.png" LargeIcon="/MSBuildExplorer3;component/Resources/Images/32/build.png" Click="menuConsoleBuild"/>
-                </Fluent:RibbonGroupBox>
-            </Fluent:RibbonTabItem>
-            <Fluent:RibbonTabItem Header="RESOURCES">
-                <Fluent:RibbonGroupBox>
-                    <Fluent:Button Name="buttonBlog" Header="Blog" LargeIcon="/MSBuildExplorer3;component/Resources/Images/32/blog.png" Click="menuBlog"/>
-                    <Fluent:Button Name="buttonHomePage" Header="Home Page" LargeIcon="/MSBuildExplorer3;component/Resources/Images/32/homepage.png" Click="menuHomePage"/>
-                    <Fluent:Button Name="buttonMSBEP" Header="MSBuild Extension Pack" LargeIcon="/MSBuildExplorer3;component/Resources/Images/Logo/MSBuild Logo (32).png" Click="menuMSBEP"/>
-                </Fluent:RibbonGroupBox>
-                <Fluent:RibbonGroupBox>
-                    <Fluent:Button Name="buttonAbout" Header="About" LargeIcon="/MSBuildExplorer3;component/Resources/Images/32/about.png" Click="menuAbout"/>
+          <Fluent:RibbonGroupBox Header="File">
+          <Fluent:Button Name="buttonOpen" Header="Open" Icon="/MSBuildExplorer3;component/Resources/Images/16/open.png" Click="menuOpen" Size="Middle"/>
+          <Fluent:Button Name="buttonSave" Header="Save" Icon="/MSBuildExplorer3;component/Resources/Images/16/save.png" Click="menuSaveFavorite" Size="Middle"/>
+          </Fluent:RibbonGroupBox>
+        <Fluent:RibbonGroupBox Header="Application">
+          <Fluent:Button Name="buttonExplorer" Header="Explorer" Icon="/MSBuildExplorer3;component/Resources/Images/32/tree.png" LargeIcon="/MSBuildExplorer3;component/Resources/Images/32/tree.png" Click="menuShowExplorer"/>
+          <Fluent:Button Name="buttonBuildPad" Header="BuildPad" Icon="/MSBuildExplorer3;component/Resources/Images/32/spade.png" LargeIcon="/MSBuildExplorer3;component/Resources/Images/32/spade.png" Click="menuShowBuildPad"/>
+          <Fluent:Button Name="buttonConsoleBuild" Header="Build" Icon="/MSBuildExplorer3;component/Resources/Images/32/build.png" LargeIcon="/MSBuildExplorer3;component/Resources/Images/32/build.png" Click="menuConsoleBuild"/>
+        </Fluent:RibbonGroupBox>
+        <Fluent:RibbonGroupBox Header="Resources">
+          <Fluent:Button Name="buttonBlog" Header="Blog" Icon="/MSBuildExplorer3;component/Resources/Images/16/blog.png" Click="menuBlog" Size="Middle"/>
+          <Fluent:Button Name="buttonHomePage" Header="Home Page" Icon="/MSBuildExplorer3;component/Resources/Images/16/homepage.png" Click="menuHomePage" Size="Middle"/>
+          <Fluent:Button Name="buttonMSBEP" Header="MSBuild Extension Pack" Icon="/MSBuildExplorer3;component/Resources/Images/Logo/MSBuild Logo (32).png" Click="menuMSBEP" Size="Middle"/>
+          <Fluent:Button Name="buttonOptions" Header="Options" Icon="/MSBuildExplorer3;component/Resources/Images/16/options.png" Click="menuOptions" Size="Middle"/>
+          <Fluent:Button Name="buttonAbout" Header="About" Icon="/MSBuildExplorer3;component/Resources/Images/16/about.png" Click="menuAbout" Size="Middle"/>
                 </Fluent:RibbonGroupBox>
             </Fluent:RibbonTabItem>
         </Fluent:Ribbon>

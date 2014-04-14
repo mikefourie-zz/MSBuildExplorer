@@ -23,6 +23,7 @@ namespace MSBuildExplorer.UserControls
         private readonly FoldingManager foldingManager;
         private readonly AbstractFoldingStrategy foldingStrategy;
         private readonly OpenFileDialog ofd = new OpenFileDialog();
+        private readonly SaveFileDialog sfd = new SaveFileDialog();
         private Project proj;
 
         public BuildPad()
@@ -72,6 +73,31 @@ namespace MSBuildExplorer.UserControls
             this.ConsoleBuild();
         }
 
+        internal void SaveFile()
+        {
+            this.sfd.InitialDirectory = Environment.SpecialFolder.Desktop.ToString();
+            this.sfd.Filter = "Proj files (*.proj)|*.proj";
+            this.sfd.FilterIndex = 2;
+            this.sfd.RestoreDirectory = true;
+
+            // Show save file dialog box
+            bool? result = this.sfd.ShowDialog();
+
+            // Process save file dialog box results
+            if (result == true)
+            {
+                using (FileStream fileStreamOut = File.Open(this.sfd.FileName, FileMode.Create))
+                {
+                    using (StreamWriter streamWriter = new StreamWriter(fileStreamOut))
+                    {
+                        streamWriter.Write(this.textBoxXml.Text);
+                    }
+                }
+
+                Process.Start(this.sfd.FileName);
+            }
+        }
+
         private void ConsoleBuild()
         {
             if (string.IsNullOrEmpty(this.textBoxXml.Text))
@@ -90,30 +116,62 @@ namespace MSBuildExplorer.UserControls
             }
 
             this.LoadFile(new FileInfo(appStartPath + @"\temp.proj"));
-            string args = string.Format(CultureInfo.CurrentCulture, "\"{0}\" {1}", this.proj.FullPath, this.TextBoxParameters.Text);
-            using (FileStream fileStream = File.Open(appStartPath + @"\wrap.bat", FileMode.Create))
+            if (this.proj != null)
             {
-                using (StreamWriter streamWriter = new StreamWriter(fileStream, System.Text.Encoding.UTF8, 512))
+                string args = string.Format(CultureInfo.CurrentCulture, "\"{0}\" {1}", this.proj.FullPath, this.TextBoxParameters.Text);
+                using (FileStream fileStream = File.Open(appStartPath + @"\wrap.bat", FileMode.Create))
                 {
-                    streamWriter.WriteLine(@"TITLE BuildPad");
-                    streamWriter.WriteLine(@"ECHO Off");
-                    streamWriter.Write(this.TextBoxPreExecute.Text);
-                    streamWriter.WriteLine();
-                    streamWriter.WriteLine(@"msbuild.exe " + args);
-                    if (Settings.Default.PauseConsoleAfterExecution)
+                    using (StreamWriter streamWriter = new StreamWriter(fileStream, System.Text.Encoding.UTF8, 512))
                     {
-                        streamWriter.WriteLine(@"pause");
+                        streamWriter.WriteLine(@"TITLE BuildPad");
+                        streamWriter.WriteLine(@"ECHO Off");
+                        streamWriter.Write(this.TextBoxPreExecute.Text);
+                        streamWriter.WriteLine();
+                        streamWriter.WriteLine(@"msbuild.exe " + args);
+                        if (Settings.Default.PauseConsoleAfterExecution)
+                        {
+                            streamWriter.WriteLine(@"pause");
+                        }
+                    }
+                }
+
+                // configure the process we need to run
+                Process buildwrapper = new Process { StartInfo = { FileName = appStartPath + @"\wrap.bat", UseShellExecute = false, Arguments = args } };
+
+                // start the process
+                buildwrapper.Start();
+            }
+        }
+
+        private void textBoxXml_Drop(object sender, DragEventArgs e)
+        {
+            string[] files1 = (string[])e.Data.GetData(DataFormats.FileDrop);
+            if (files1 != null)
+            {
+                foreach (var v in files1)
+                {
+                    FileInfo f = new FileInfo(v);
+                    if (f.Exists)
+                    {
+                        using (StreamReader sr = f.OpenText())
+                        {
+                            this.textBoxXml.Text = sr.ReadToEnd();
+                        }
+
+                        break;
                     }
                 }
             }
-
-            // configure the process we need to run
-            Process buildwrapper = new Process { StartInfo = { FileName = appStartPath + @"\wrap.bat", UseShellExecute = false, Arguments = args } };
-
-            // start the process
-            buildwrapper.Start();
         }
-        
+
+        private void textBoxXml_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                e.Effects = DragDropEffects.Copy;
+            }
+        }
+
         private void foldingUpdateTimer_Tick(object sender, EventArgs e)
         {
             if (this.foldingStrategy != null)

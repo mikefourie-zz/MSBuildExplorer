@@ -86,7 +86,14 @@ namespace MSBuildExplorer
 
         private void menuSaveFavorite(object sender, RoutedEventArgs e)
         {
-            this.SaveFavorite();
+            if (this.mode == buildMode.Explorer)
+            {
+                this.SaveFavorite();
+            }
+            else
+            {
+                this.BuildPad.SaveFile();
+            }
         }
 
         private void menuConsoleBuild(object sender, RoutedEventArgs e)
@@ -106,31 +113,7 @@ namespace MSBuildExplorer
             this.ClearControls();
             this.Options.Visibility = Visibility.Visible;
         }
-
-        private void menuExit(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
         
-        //////private void MenuItem_Click_7(object sender, RoutedEventArgs e)
-        //////{
-        //////    MenuItem mi = e.Source as MenuItem;
-        //////    bool updatedfav = false;
-        //////    switch (mi.Name)
-        //////    {
-        //////        case "menuOpen":
-        //////        case "menuClose":
-        //////            this.T1.CloseFile(false);
-        //////            break;
-        //////        case "menuCloseAll":
-        //////            this.T1.CloseFile(true);
-        //////            break;
-        //////        case "menuApplicationFolder":
-        //////            Process.Start(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName));
-        //////            break;
-        //////    }
-        //////}
-
         private void SaveFavorite()
         {
             this.Explorer.SaveFavorite();
@@ -151,14 +134,6 @@ namespace MSBuildExplorer
                             };
             userPrefs.Save();
         }
-
-        ////private void menuBuild_Click(object sender, RoutedEventArgs e)
-        ////{
-        ////    if (this.T1.RootFile != null)
-        ////    {
-        ////        this.D1.Build(this.T1.RootFile.ProjectFile, false, string.Empty);
-        ////    }
-        ////}
 
         private void ClearControls()
         {
