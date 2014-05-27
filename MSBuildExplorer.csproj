@@ -390,7 +390,7 @@
     <Resource Include="Resources\Images\16\about.png" />
     <Resource Include="Resources\Images\16\homepage.png" />
     <Resource Include="Resources\Images\16\options.png" />
-    <Content Include="Resources\References\ICSharpCode.AvalonEdit.dll" />
+    <Content Include="Internal\AssemblyReferences\ICSharpCode.AvalonEdit.dll" />
   </ItemGroup>
   <ItemGroup>
     <PublishFile Include="de\System.Windows.Interactivity.resources">
@@ -453,6 +453,16 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
+    <PublishFile Include="Internal\AssemblyReferences\ICSharpCode.AvalonEdit.dll">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
     <PublishFile Include="it\System.Windows.Interactivity.resources">
       <Visible>False</Visible>
       <Group>
@@ -482,16 +492,6 @@
       <PublishState>Exclude</PublishState>
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
-    </PublishFile>
-    <PublishFile Include="Resources\References\ICSharpCode.AvalonEdit.dll">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="System.Windows.Interactivity">
       <Visible>False</Visible>
