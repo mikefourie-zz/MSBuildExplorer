@@ -11,6 +11,7 @@ namespace MSBuildExplorer.UserControls
     using MSBuildExplorer.DataModel;
     using MSBuildExplorer.Forms;
     using MSBuildExplorer.Properties;
+    using Microsoft.Build.Exceptions;
 
     /// <summary>
     /// Interaction logic for Main
@@ -51,8 +52,7 @@ namespace MSBuildExplorer.UserControls
             {
                 this.LogMessage("Failed to explore " + this.T1.RootFile.ProjectFile.FullPath + this.T1.TreeExeption);
                 MessageBox.Show(
-                    string.Format(
-                        "Failed to explore {0}.\n\n{1}",
+                    string.Format("Failed to explore {0}.\n\n{1}.",
                         this.T1.RootFile.ProjectFile.FullPath,
                         this.T1.TreeExeption.Message),
                     "Explore Failed",
@@ -67,6 +67,12 @@ namespace MSBuildExplorer.UserControls
                     "Explore Failed",
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
+            }
+
+            if(this.T1.TreeExeption is InvalidProjectFileException)
+            {
+                var exception = this.T1.TreeExeption as InvalidProjectFileException;
+                this.LogMessage("Line " + exception.LineNumber);
             }
         }
 
@@ -149,7 +155,7 @@ namespace MSBuildExplorer.UserControls
 
         public void Reload()
         {
-            this.T1.LoadFile(new FileInfo(this.T1.RootFile.ProjectFile.FullPath), true);    
+            this.T1.LoadFile(new FileInfo(this.T1.RootFile.ProjectFile.FullPath), true);
         }
 
         public void Build()
