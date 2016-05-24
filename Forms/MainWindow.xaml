@@ -35,7 +35,7 @@
       </Fluent:RibbonTabItem>
     </Fluent:Ribbon>
     <Grid>
-      <basic:Main x:Name="Explorer"/>
+      <basic:Main x:Name="Explorer" FontSize="14" FontWeight="Medium"/>
       <basic:BuildPad x:Name="BuildPad" Visibility="Hidden"/>
       <basic:About x:Name="About" Visibility="Hidden"/>
       <basic:Options x:Name="Options" Visibility="Hidden"/>

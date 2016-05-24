@@ -22,6 +22,7 @@ namespace MSBuildExplorer
             this.Top = userPrefs.WindowTop;
             this.Left = userPrefs.WindowLeft;
             this.WindowState = userPrefs.WindowState;
+
         }
 
         private enum buildMode

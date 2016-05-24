@@ -104,7 +104,7 @@
             </TabItem>
             <TabItem Header="Imports">
                 <Grid Background="#FFEFEFF2">
-                    <DataGrid VerticalGridLinesBrush="{StaticResource RedGridLine}" HorizontalGridLinesBrush="{StaticResource BlueGridLine}" ItemsSource="{Binding ImportsCollection}" AutoGenerateColumns="True" Name="dataGridImports" IsReadOnly="True" SelectionUnit="Cell" FontSize="11" FrozenColumnCount="1"/>
+                    <DataGrid VerticalGridLinesBrush="{StaticResource RedGridLine}" HorizontalGridLinesBrush="{StaticResource BlueGridLine}" ItemsSource="{Binding ImportsCollection}" AutoGenerateColumns="True" Name="dataGridImports" IsReadOnly="false" SelectionUnit="Cell" FontSize="14" FrozenColumnCount="1"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Usings">
