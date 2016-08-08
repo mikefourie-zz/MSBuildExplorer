@@ -46,17 +46,14 @@ namespace MSBuildExplorer.DataModel
         [DebuggerNonUserCode]
         private void VerifyProperty(string propertyName)
         {
-            Type type = GetType();
+            var type = GetType();
 
             //look for a *public* property with the specified name
-            PropertyInfo pi = type.GetProperty(propertyName);
+            var pi = type.GetProperty(propertyName);
             if (pi == null)
             {
                 //there is no matching property - notify the developer
-                string msg = "OnPropertyChanged was invoked with invalid property name {0}: ";
-                msg += "{0} is not a public property of {1}.";
-                msg = String.Format(msg, propertyName, type.FullName);
-                Debug.Fail(msg);
+                Debug.Fail(String.Format("OnPropertyChanged was invoked with invalid property name {0}: {0} is not a public property of {1}.", propertyName, type.FullName));
             }
         }
     }
