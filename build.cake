@@ -12,12 +12,12 @@ Action<string, string> build = (config, target) => {
 
 Task("Build-Debug")
     .Does(() => {
-        Build("Debug", "Build");
+        build("Debug", "Build");
     });
 
 Task("Build-Release")
     .Does(() => {
-        Build("Release", "Build");
+        build("Release", "Build");
     });
 
 var target = Argument("target", "default");
