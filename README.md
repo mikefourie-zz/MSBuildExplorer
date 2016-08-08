@@ -1,4 +1,13 @@
-MSBuildExplorer
-===============
+## MSBuildExplorer
 
-[![Build status](https://ci.appveyor.com/api/projects/status/h1ek1jovgxha055d)](https://ci.appveyor.com/project/mikefourie/msbuildexplorer)
+Explore targets that you have available.
+
+## Build
+
+- Build debug
+
+> build.cmd -target Build-Debug
+
+- Build release
+
+> build.cmd -target Build-Release
