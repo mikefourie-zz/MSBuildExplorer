@@ -151,6 +151,11 @@ namespace MSBuildExplorer.UserControls
         {
             this.T1.LoadFile(new FileInfo(this.T1.RootFile.ProjectFile.FullPath), true);    
         }
+        public void Reload(String propertyName, String PropertyValue)
+        {
+            bool forceReload = true;
+            this.T1.LoadFile(new FileInfo(this.T1.RootFile.ProjectFile.FullPath), true, propertyName, PropertyValue, forceReload);
+        }
 
         public void Build()
         {
@@ -181,7 +186,7 @@ namespace MSBuildExplorer.UserControls
             this.ofd.Title = "Open";
             this.ofd.Multiselect = true;
             this.ofd.RestoreDirectory = true;
-            this.ofd.Filter = "MSBuild Files|*.msbuild;*.proj;*.properties;*.targets;*.tasks;*.csproj;*.vbproj;*.vcxproj;*.msbef|All files|*.*";
+            this.ofd.Filter = "MSBuild Files|*.msbuild;*.proj;*.props;*.properties;*.targets;*.tasks;*.csproj;*.vbproj;*.vcxproj;*.msbef|All files|*.*";
             this.ofd.FilterIndex = 0;
             this.ofd.ShowDialog();
             foreach (var s in this.ofd.FileNames)

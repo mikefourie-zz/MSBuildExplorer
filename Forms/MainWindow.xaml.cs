@@ -22,6 +22,8 @@ namespace MSBuildExplorer
             this.Top = userPrefs.WindowTop;
             this.Left = userPrefs.WindowLeft;
             this.WindowState = userPrefs.WindowState;
+
+            this.Explorer.T1.AddHandler(UserControls.TreeExplorer.PopulateEverything, new RoutedEventHandler(this.PopulateEverythingHandler));
         }
 
         private enum buildMode
@@ -141,6 +143,42 @@ namespace MSBuildExplorer
             this.BuildPad.Visibility = Visibility.Hidden;
             this.About.Visibility = Visibility.Hidden;
             this.Options.Visibility = Visibility.Hidden;
+        }
+
+        private bool LoadingGlobalProps = false;
+        private void PopulateEverythingHandler(object sender, RoutedEventArgs e)
+        {
+            DataModel.MSBuildFile root = this.Explorer.T1.RootFile;
+            try
+            {
+                LoadingGlobalProps = true;
+                this.comboGlobalConfiguration.ItemsSource = root.GlobalConfigurations;
+                this.comboGlobalPlatform.ItemsSource = root.GlobalPlatforms;
+
+                Microsoft.Build.Evaluation.ProjectProperty defaultConfig = root.ProjectFile.GetProperty("Configuration");
+                Microsoft.Build.Evaluation.ProjectProperty defaultPlatform = root.ProjectFile.GetProperty("Platform");
+
+                this.comboGlobalConfiguration.SelectedItem = defaultConfig.EvaluatedValue;
+                this.comboGlobalPlatform.SelectedItem = defaultPlatform.EvaluatedValue;
+            }
+            finally
+            {
+                LoadingGlobalProps = false;
+            }
+        }
+
+        private void comboGlobalConfiguration_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            if (LoadingGlobalProps) return;
+            String newConfig = e.AddedItems[0] as String;
+            this.Explorer.Reload("Configuration", newConfig);
+        }
+
+        private void comboGlobalPlatform_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            if (LoadingGlobalProps) return;
+            String newPlatform = e.AddedItems[0] as String;
+            this.Explorer.Reload("Platform", newPlatform);
         }
     }
 }

@@ -36,18 +36,18 @@ namespace MSBuildExplorer.UserControls
             InitializeComponent();
         }
 
-        public void LoadFile(FileInfo file, bool populate)
+        public void LoadFile(FileInfo file, bool populate, String propertyName = null, String propertyValue = null, bool forceReload = false)
         {
-            if (this.RootFile != null && this.RootFile.ProjectFile.FullPath == file.FullName)
+            if (this.RootFile != null && this.RootFile.ProjectFile.FullPath == file.FullName && !forceReload)
             {
                 return;
             }
 
             RaiseEvent(new RoutedEventArgs(TreeExplorer.StartExplore, this));
-            MSBuildFileEqualityComparer eq = new MSBuildFileEqualityComparer();
+            
             try
             {
-                this.RootFile = MSBuildHelper.GetFile(file);
+                this.RootFile = MSBuildHelper.GetFile(file, propertyName, propertyValue);
             }
             catch (Exception ex)
             {
@@ -55,7 +55,7 @@ namespace MSBuildExplorer.UserControls
                 RaiseEvent(new RoutedEventArgs(TreeExplorer.FailedExplore, this));
                 return;
             }
-
+            MSBuildFileEqualityComparer eq = new MSBuildFileEqualityComparer();
             if (this.files.Contains(this.RootFile, eq))
             {
                 int i = 0;

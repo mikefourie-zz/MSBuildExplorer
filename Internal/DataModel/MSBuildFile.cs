@@ -21,6 +21,8 @@ namespace MSBuildExplorer.DataModel
             this.Items = new ObservableCollection<MSBuildItems>();
             this.Usings = new ObservableCollection<MSBuildUsing>();
             this.Imports = new ObservableCollection<MSBuildImport>();
+			this.GlobalConfigurations = new ObservableCollection<String>();
+			this.GlobalPlatforms = new ObservableCollection<String>();
         }
 
         public Project ProjectFile { get; set; }
@@ -35,7 +37,11 @@ namespace MSBuildExplorer.DataModel
 
         public ObservableCollection<MSBuildProperties> Properties { get; set; }
 
-        public ObservableCollection<MSBuildUsing> Usings { get; set; }
+		public ObservableCollection<String> GlobalConfigurations { get; set; }
+
+		public ObservableCollection<String> GlobalPlatforms { get; set; }
+
+		public ObservableCollection<MSBuildUsing> Usings { get; set; }
 
         public ObservableCollection<MSBuildItems> Items { get; set; }
 
