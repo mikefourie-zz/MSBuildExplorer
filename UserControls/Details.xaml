@@ -1,9 +1,10 @@
-﻿<UserControl x:Class="MSBuildExplorer.UserControls.Details"
+﻿<UserControl
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
+             xmlns:Fluent="clr-namespace:Fluent;assembly=Fluent" x:Class="MSBuildExplorer.UserControls.Details"
              mc:Ignorable="d"
                      DataContext="{Binding RelativeSource={RelativeSource Self}}"
              d:DesignHeight="800.613" d:DesignWidth="950.95" >
@@ -13,11 +14,7 @@
     </UserControl.Resources>
     <DockPanel>
 
-        <DockPanel.Resources>
-
-        </DockPanel.Resources>
-
-        <TabControl Name="tabControlDetails" Background="#FFEFEFF2">
+        <TabControl x:Name="tabControlDetails" Background="#FFEFEFF2">
             <TabItem Header="Targets" Foreground="#FF072904">
                 <Grid Background="#FFEFEFF2">
                     <TreeView x:Name="treeviewTargets" ItemsSource="{Binding TargetsToBuild}" AllowDrop="True" Drop="treeviewTargets_Drop" DragEnter="treeviewTargets_DragEnter" Margin="0,31,0,197" HorizontalAlignment="Left" Width="297" FontSize="14">
@@ -77,7 +74,10 @@
                             </ContextMenu>
                         </TreeView.ContextMenu>
                     </TreeView>
-                    <Label Content="Build Parameters" HorizontalAlignment="Left" Margin="19,0,0,166" VerticalAlignment="Bottom" Width="124"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Build Parameters" HorizontalAlignment="Left" Margin="19,0,0,166" VerticalAlignment="Bottom" Width="124"/>
+                        <Button x:Name="btnEvaluate" Content="Re-evaluate Properties" Width="124" Margin="0,0,0,170" VerticalAlignment="Bottom" ClipToBounds="True" Click="evaluateParameters"/>
+                    </StackPanel>
                     <TextBox x:Name="TextBoxParameters" Margin="1,0,0,115" TextWrapping="Wrap" FontSize="11" AcceptsReturn="True" Height="51" VerticalAlignment="Bottom" />
                     <Label Content="Pre-Build Commands" HorizontalAlignment="Left" Margin="19,0,0,84" VerticalAlignment="Bottom" Width="167" RenderTransformOrigin="0.499,1.25"/>
                     <TextBox Margin="0,0,1,0" x:Name="TextBoxPreExecute" TextWrapping="Wrap" FontSize="11" AcceptsReturn="True" AcceptsTab="False" Height="84" VerticalAlignment="Bottom" />
@@ -87,39 +87,39 @@
                     <Image HorizontalAlignment="Left" Height="16" Margin="2,0,0,89" VerticalAlignment="Bottom" Width="16" Source="/MSBuildExplorer3;component/Resources/Images/16/prebuild.png" Stretch="None"/>
                     <Label Content="Targets to Build" HorizontalAlignment="Left" Margin="2,3,0,0" VerticalAlignment="Top"/>
                     <Label Content="Selected Target Details" HorizontalAlignment="Left" Margin="323,3,0,0" VerticalAlignment="Top"/>
-                    <DataGrid HeadersVisibility="None" AlternatingRowBackground="#FFF6F6F6" AlternationCount="2" Margin="323,34,1,0" VerticalGridLinesBrush="{StaticResource RedGridLine}" HorizontalGridLinesBrush="{StaticResource BlueGridLine}" ItemsSource="{Binding TargetDetailsCollection}" AutoGenerateColumns="True" Name="dataGridTargetDetails" IsReadOnly="True" SelectionUnit="Cell" FontSize="11" FrozenColumnCount="1" BorderBrush="#FFF6F6F6" Height="230" VerticalAlignment="Top" Background="{x:Null}" />
+                    <DataGrid HeadersVisibility="None" AlternatingRowBackground="#FFF6F6F6" AlternationCount="2" Margin="323,34,1,0" VerticalGridLinesBrush="{StaticResource RedGridLine}" HorizontalGridLinesBrush="{StaticResource BlueGridLine}" ItemsSource="{Binding TargetDetailsCollection}" AutoGenerateColumns="True" x:Name="dataGridTargetDetails" IsReadOnly="True" SelectionUnit="Cell" FontSize="11" FrozenColumnCount="1" BorderBrush="#FFF6F6F6" Height="230" VerticalAlignment="Top" Background="{x:Null}" />
                     <Image x:Name="ImageMoveUp_Copy" Source="/MSBuildExplorer3;component/Resources/Images/16/delete.png" Stretch="None" HorizontalAlignment="Left" Width="16" Cursor="Hand" MouseUp="ImageClearTargets_MouseUp" Height="16" VerticalAlignment="Top" RenderTransformOrigin="0.37,1.315" Margin="234,13,0,0"/>
 
                 </Grid>
             </TabItem>
             <TabItem Header="Properties">
                 <Grid Background="#FFEFEFF2">
-                    <DataGrid  VerticalGridLinesBrush="{StaticResource RedGridLine}" HorizontalGridLinesBrush="{StaticResource BlueGridLine}" ItemsSource="{Binding PropertiesCollection}" AutoGenerateColumns="True" Name="dataGridProperties" IsReadOnly="True" SelectionUnit="Cell" FontSize="11" FrozenColumnCount="1" />
+                    <DataGrid  VerticalGridLinesBrush="{StaticResource RedGridLine}" HorizontalGridLinesBrush="{StaticResource BlueGridLine}" ItemsSource="{Binding PropertiesCollection}" AutoGenerateColumns="True" x:Name="dataGridProperties" IsReadOnly="True" SelectionUnit="Cell" FontSize="11" FrozenColumnCount="1" />
                 </Grid>
             </TabItem>
             <TabItem Header="Items">
                 <Grid Background="#FFEFEFF2">
-                    <DataGrid VerticalGridLinesBrush="{StaticResource RedGridLine}" HorizontalGridLinesBrush="{StaticResource BlueGridLine}" ItemsSource="{Binding ItemsCollection}" AutoGenerateColumns="True" Name="dataGridItems" IsReadOnly="True" SelectionUnit="Cell" FontSize="11" FrozenColumnCount="1"/>
+                    <DataGrid VerticalGridLinesBrush="{StaticResource RedGridLine}" HorizontalGridLinesBrush="{StaticResource BlueGridLine}" ItemsSource="{Binding ItemsCollection}" AutoGenerateColumns="True" x:Name="dataGridItems" IsReadOnly="True" SelectionUnit="Cell" FontSize="11" FrozenColumnCount="1"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Imports">
                 <Grid Background="#FFEFEFF2">
-                    <DataGrid VerticalGridLinesBrush="{StaticResource RedGridLine}" HorizontalGridLinesBrush="{StaticResource BlueGridLine}" ItemsSource="{Binding ImportsCollection}" AutoGenerateColumns="True" Name="dataGridImports" IsReadOnly="True" SelectionUnit="Cell" FontSize="11" FrozenColumnCount="1"/>
+                    <DataGrid VerticalGridLinesBrush="{StaticResource RedGridLine}" HorizontalGridLinesBrush="{StaticResource BlueGridLine}" ItemsSource="{Binding ImportsCollection}" AutoGenerateColumns="True" x:Name="dataGridImports" IsReadOnly="True" SelectionUnit="Cell" FontSize="11" FrozenColumnCount="1"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Usings">
                 <Grid Background="#FFEFEFF2">
-                    <DataGrid VerticalGridLinesBrush="{StaticResource RedGridLine}" HorizontalGridLinesBrush="{StaticResource BlueGridLine}" ItemsSource="{Binding UsingsCollection}" AutoGenerateColumns="True" Name="dataGridUsings" IsReadOnly="True" SelectionUnit="Cell" FontSize="11" FrozenColumnCount="1"/>
+                    <DataGrid VerticalGridLinesBrush="{StaticResource RedGridLine}" HorizontalGridLinesBrush="{StaticResource BlueGridLine}" ItemsSource="{Binding UsingsCollection}" AutoGenerateColumns="True" x:Name="dataGridUsings" IsReadOnly="True" SelectionUnit="Cell" FontSize="11" FrozenColumnCount="1"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Xml">
                 <Grid Background="#FFEFEFF2">
-                    <avalonEdit:TextEditor Name="textBoxXml" FontFamily="Consolas" FontSize="9pt" ShowLineNumbers="true" SyntaxHighlighting="XML"/>
+                    <avalonEdit:TextEditor x:Name="textBoxXml" FontFamily="Consolas" FontSize="9pt" ShowLineNumbers="true" SyntaxHighlighting="XML"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Log">
                 <Grid Background="#FFEFEFF2">
-                    <TextBox Name="TextBoxLog" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" TextWrapping="NoWrap" Width="Auto" MaxWidth="{Binding ElementName=tabControlDetails, Path=Width}" FontSize="11" />
+                    <TextBox x:Name="TextBoxLog" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" TextWrapping="NoWrap" Width="Auto" MaxWidth="{Binding Width, ElementName=tabControlDetails}" FontSize="11" />
                 </Grid>
             </TabItem>
         </TabControl>

@@ -1,6 +1,10 @@
 ﻿//---------------------------------------------------------------------------------------------------------------------------
 // <copyright file="Details.xaml.cs">(c) Mike Fourie. All other rights reserved.</copyright>
 //---------------------------------------------------------------------------------------------------------------------------
+
+using System.Collections.Generic;
+using Microsoft.Build.Execution;
+
 namespace MSBuildExplorer.UserControls
 {
     using System;
@@ -86,6 +90,7 @@ namespace MSBuildExplorer.UserControls
         
         public void PopulateAll(MSBuildFile f)
         {
+            this.SelectedProject = f;
             this.ClearTargetDetails();
             this.PopulateUsings(f);
             this.PopulateProperties(f);
@@ -93,6 +98,8 @@ namespace MSBuildExplorer.UserControls
             this.PopulateImports(f);
             this.PopulateXml(f);
         }
+
+        public MSBuildFile SelectedProject { get; set; }
 
         public void PopulateProperties(MSBuildFile f)
         {
@@ -430,6 +437,37 @@ namespace MSBuildExplorer.UserControls
                     this.treeviewTargets.Items.Refresh();
                 }
             }
+        }
+
+        private void evaluateParameters(object sender, RoutedEventArgs e)
+        {
+            if (this.SelectedProject == null)
+                return;
+
+            var parameters = TextBoxParameters.Text.Split(new char[] {' '});
+            var globalProps = new Dictionary<string, string>();
+            foreach (var prop in parameters)
+            {
+                if (prop.StartsWith("/p:"))
+                {
+                    var pair = prop.Substring(3).Split('=');
+                    if (pair.Length == 2)
+                    {
+                        globalProps.Add(pair[0], pair[1]);
+                    }
+                }
+            }
+
+            var projInst = new ProjectInstance(this.SelectedProject.ProjectFile.FullPath, globalProps,
+                this.SelectedProject.ToolsVersion);
+            foreach (var p in this.PropertiesCollection)
+            {
+                p.EvaluatedValue = projInst.GetPropertyValue(p.Name);
+            }
+
+            this.dataGridProperties.ItemsSource = null;
+            this.dataGridProperties.ItemsSource = this.PropertiesCollection;
+            this.tabControlDetails.SelectedIndex = 1;
         }
     }
 }
