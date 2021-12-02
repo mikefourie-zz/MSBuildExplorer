@@ -459,7 +459,7 @@ namespace MSBuildExplorer.UserControls
             }
 
             var projInst = new ProjectInstance(this.SelectedProject.ProjectFile.FullPath, globalProps,
-                this.SelectedProject.ToolsVersion);
+                this.SelectedProject.ToolsVersion??"14.0");
             foreach (var p in this.PropertiesCollection)
             {
                 p.EvaluatedValue = projInst.GetPropertyValue(p.Name);
